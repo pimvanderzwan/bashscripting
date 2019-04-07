@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "geef een naam: "; read NAME
+
+if [[ -z $NAME ]]; then
+	NAME=$USER
+fi
+
+echo "geef een password met minimaal 8 karakters, een kleine letter, een cijfer en  een hoofdletter."
+while read PASS; do
+if [[ "$PASS" =~ [A-Z] ]] && [[ "$PASS" =~ [a-z] ]] && [[ "$PASS" =~ [0-9] ]] && [[ "${#PASS}" -gt 7 ]]
+then
+	echo "$NAME" >> $1
+	echo "$PASS" | md5sum >> $1
+	break
+
+else
+	echo "Dit wachtwoord is ongeldig, doe het overnieuw."
+fi
+
+done
