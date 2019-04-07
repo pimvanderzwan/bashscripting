@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+echo '' > $1/error.log
+
+
+for FILE in `find $1`; do
+	if $2 "$FILE" > /dev/null 2> /dev/null; then
+	  echo "$2 $FILE mislukt." >> $1/error.log
+    
+	else
+	  echo "$2 $FILE mislukt." >> $1/error.log
+    
+done
