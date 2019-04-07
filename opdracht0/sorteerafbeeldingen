@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mkdir /home/internetmedley/Afbeeldingen
+cd $1
+
+for FILE in *.jpeg *.png; do
+
+	mv $FILE /home/pim/Afbeeldingen
+done
+
+#met find -exec:
+: ' 
+mkdir /home/pim/Afbeeldingen
+cd $1
+
+find *.jpeg *.png -type f -exec mv {} /home/pim/Afbeeldingen \;
+'
