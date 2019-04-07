@@ -1,0 +1,23 @@
+#!/bin/bash
+
+COUNT2=0
+COUNT3=0
+COUNT4=0
+
+for FILE in $1/*.*; do
+	case ${FILE##*.} in
+	$2)
+	let ++COUNT2
+	;;
+	$3)
+	let ++COUNT2
+	;;
+	$4)
+	let ++COUNT4
+	;;
+	esac
+done
+
+echo "hoeveelheid bestanden met $2 extensie: $COUNT2"
+echo "hoeveelheid bestanden met $3 extensie: $COUNT3"
+echo "hoeveelheid bestanden met $4 extensie: $COUNT4"
