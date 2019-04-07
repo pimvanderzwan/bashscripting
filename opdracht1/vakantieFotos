@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo mkdir $1/VakantieFotos
+find $1 $1*.jpeg $1*.png -type f -exec sudo mv {} $1/VakantieFotos \;
